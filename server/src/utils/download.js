@@ -11,11 +11,11 @@ export async function serveResumableFileDownload({
   res,
   forceDownload,
 }) {
+  const { size: fileSize } = await fs.stat(filePath);
+
   if (forceDownload) {
     res.set("Content-disposition", contentDisposition(basename(filePath)));
   }
-
-  const { size: fileSize } = await fs.stat(filePath);
 
   if (range) {
     const subranges = parseRange(fileSize, range);

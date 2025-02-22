@@ -1,7 +1,3 @@
-Here’s the **complete documentation** for your file-sharing backend application. You can save this as a text file (e.g., `documentation.txt`) for future reference.
-
----
-
 # **File-Sharing Backend Documentation**
 
 This backend application is built using **Node.js** and **Express**. It provides APIs for file sharing, including features like file browsing, upload/download, clipboard sync, and ZIP creation. Below is an in-depth explanation of the codebase.
@@ -201,7 +197,3 @@ src/
 2. **Rate Limiting**: Prevent abuse with rate limiting on upload/download endpoints.
 3. **File Thumbnails**: Generate thumbnails for images in `/browse` responses.
 4. **Docker Support**: Containerize the app for easy deployment.
-
----
-
-This documentation provides a comprehensive overview of the codebase. Save it as `documentation.txt` for future reference! 🚀

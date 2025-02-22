@@ -1,7 +1,10 @@
 // src/app.js
 import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
 import morgan from "morgan";
-import { join, resolve } from "path";
+import { resolve } from "path";
+
 import { config } from "./config/index.js";
 import routes from "./routes/index.js";
 import { errorHandler } from "./middleware/error.js";
@@ -21,6 +24,8 @@ export function createApp({
   app.locals.zipCompressionLevel = zipCompressionLevel;
 
   // Middleware
+  dotenv.config();
+  app.use(cors()); // Enable CORS
   if (config.debug) app.use(morgan("dev")); // Log requests in debug mode
   app.use(express.json()); // Parse JSON request bodies
   app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
