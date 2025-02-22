@@ -1,0 +1,138 @@
+/* Center everything */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Optional: Prevents scrollbars if not needed */
+}
+/* Change the font color of the <h1> element to white */
+h1 {
+  color: white;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  min-height: 100vh;
+  text-align: center;
+  background-color: #0d0d56; /* Dark blue background */
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
+}
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Card styles (container for the file upload section) */
+.card {
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.336); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 3px 4px 6px rgba(255, 255, 255, 0.12);
+  margin: 20px 0;
+  width: 300px; /* Slightly wider */
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+}
+
+/* File upload section */
+.file-upload-section {
+  margin-top: 10px;
+}
+
+.file-upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2631ff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.file-upload-button:hover {
+  background-color: #343eff;
+}
+
+/* Selected file text */
+.file-upload-section p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+/* Uploaded Files Container */
+.uploaded-files-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between file boxes */
+  width: 100%;
+}
+
+/* Individual File Box */
+.file-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+  border-radius: 8px;
+  color: white;
+}
+
+/* Remove File Button */
+.remove-file-button {
+  background-color: #ff4d4d; /* Red color for the button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-file-button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+/* No Files Message */
+.no-files-message {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+/* Notification Box */
+/* Notification Box */
+.notification-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #ff4d4d; /* Red background */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
