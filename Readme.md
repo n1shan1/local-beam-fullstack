@@ -2,7 +2,7 @@
 
 A full-stack application for secure file sharing and clipboard synchronization across devices, built with Node.js/Express backend and React frontend.
 
-![App Screenshot](/screenshot.png)
+![App Screenshot](https://github.com/n1shan1/STATIC-REPO/blob/master/images/local-beam.png)
 
 ## Features
 

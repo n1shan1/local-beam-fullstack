@@ -14,7 +14,7 @@ dotenv.config();
 
 // Define CORS options, using environment variables to allow flexibility
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(",") : "*", // Comma-separated list of allowed origins
+  origin: "*", // Comma-separated list of allowed origins
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true, // Allow cookies to be sent across origins

@@ -11,7 +11,10 @@
     "dev": "npm run build && nodemon src/index.js",
     "start": "npm run build && node src/index.js",
     "build": "cd ../client && npm run build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build-client": "cd ../client && npm run build",
+    "prepare": "npm run build-client",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -50,19 +53,24 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
     "args": "^5.0.3",
+    "eslint": "^8.50.0",
     "nodemon": "^3.1.9",
-    "pkg": "^5.8.1",
-    "eslint": "^8.50.0"
+    "pkg": "^5.8.1"
   },
   "pkg": {
-    "assets": [
-      "public/**/*"
-    ],
-    "targets": [
-      "node18-win-x64",
-      "node18-linux-x64",
-      "node18-macos-x64"
-    ]
-  }
+  "assets": [
+    "public/**/*"
+  ],
+  "targets": [
+    "node18-win-x64",
+    "node18-linux-x64",
+    "node18-macos-x64",
+    "node18-macos-arm64"
+  ]
+}
+
 }
