@@ -8,6 +8,7 @@ import { resolve } from "path";
 import { config } from "./config/index.js";
 import routes from "./routes/index.js";
 import { errorHandler } from "./middleware/error.js";
+import { returnURL } from "./index.js";
 
 export function createApp({
   sharedPath: sharedPathIn,
@@ -16,6 +17,7 @@ export function createApp({
   zipCompressionLevel = config.defaultZipLevel,
 }) {
   const app = express();
+
   const sharedPath = sharedPathIn ? resolve(sharedPathIn) : process.cwd();
 
   // Store config in app.locals for access in routes
@@ -37,4 +39,18 @@ export function createApp({
   app.use(errorHandler);
 
   return app;
+}
+
+export function createConfigApp() {
+  const configApp = express();
+  dotenv.config();
+  configApp.use(cors()); // Enable CORS
+  if (config.debug) configApp.use(morgan("dev")); // Log
+  configApp.use(express.json()); // Parse JSON request bodies
+  configApp.use(express.urlencoded({ extended: true }));
+  configApp.get("/config", (req, res) => {
+    res.json({ url: returnURL() });
+  });
+
+  return configApp;
 }
