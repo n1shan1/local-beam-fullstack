@@ -1,0 +1,198 @@
+/* Reset default margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif; /* Default font */
+}
+
+/* Ensure the app container fills the entire screen */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  min-height: 100vh;
+  text-align: center;
+  background-color: #0d0d56; /* Dark blue background */
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
+}
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Vite + React Heading */
+h1 {
+  color: white; /* White font color */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+/* Main container */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limit maximum width */
+  margin-top: 20px;
+}
+
+/* File Management Container */
+.file-management-container {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  background-color: rgba(22, 22, 98, 0.38); /* Semi-transparent background */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 3px 4px 6px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+}
+
+/* Controls Container (Add File and Upload Buttons) */
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Space between Add File and Upload Buttons */
+  margin-bottom: 20px; /* Space below controls */
+}
+
+/* File upload section */
+.file-upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3943ff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.file-upload-button:hover {
+  background-color: #4c55ff;
+}
+
+/* Upload button */
+.upload-button {
+  padding: 10px 20px;
+  background-color: #3943ff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #4c55ff; /* Darker blue on hover */
+}
+
+/* File search section */
+.file-search-section {
+  margin-bottom: 20px; /* Space below search bar */
+}
+
+.file-search-section input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 98%; /* Make the search bar wider */
+  max-width: 100%; /* Adjust max-width as needed */
+}
+
+/* File List Container */
+.file-list-container {
+  width: 100%;
+}
+
+/* Uploaded files container */
+.uploaded-files-container {
+  max-height: 400px; /* Limit height to enable scrolling */
+  overflow-y: auto; /* Add vertical scrollbar */
+  padding-right: 10px; /* Add space for scrollbar */
+}
+
+/* File box */
+.file-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.file-box span {
+  color: white;
+}
+
+.remove-file-button {
+  background-color: #fe1a1a; /* Red background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-file-button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+/* No files message */
+.no-files-message {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+/* Notification box */
+.notification-box,
+.upload-success-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.notification-box {
+  background-color: #ff4d4d; /* Red background */
+}
+
+.upload-success-box {
+  background-color: #4caf50; /* Green background */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
