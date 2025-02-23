@@ -1,0 +1,13 @@
+{
+  "name": "local-beam-fs",
+  "version": "1.0.0",
+  "description": "This backend application is built using **Node.js** and **Express**. It provides APIs for file sharing, including features like file browsing, upload/download, clipboard sync, and ZIP creation. Below is an in-depth explanation of the codebase.",
+  "main": "index.js",
+  "scripts": { 
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start": "npm run start --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

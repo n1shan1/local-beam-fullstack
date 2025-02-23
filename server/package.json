@@ -1,16 +1,35 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A server built with Express to handle file uploads, compression, and proxying, serving both API endpoints and a static client build.",
+  "main": "src/index.js",
   "type": "module",
-  "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+  "bin": {
+    "server": "src/index.js"
   },
-  "keywords": [],
-  "author": "github.com/n1shan1",
+  "scripts": {
+    "dev": "npm run build && nodemon src/index.js",
+    "start": "npm run build && node src/index.js",
+    "build": "cd ../client && npm run build",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n1shan1/your-repository-name.git"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "api",
+    "file-upload",
+    "compression",
+    "proxy"
+  ],
+  "author": "n1shan1",
   "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "dependencies": {
     "archiver": "^7.0.1",
     "body-parser": "^1.20.3",
@@ -33,6 +52,17 @@
   "devDependencies": {
     "args": "^5.0.3",
     "nodemon": "^3.1.9",
-    "pkg": "^5.8.1"
+    "pkg": "^5.8.1",
+    "eslint": "^8.50.0"
+  },
+  "pkg": {
+    "assets": [
+      "public/**/*"
+    ],
+    "targets": [
+      "node18-win-x64",
+      "node18-linux-x64",
+      "node18-macos-x64"
+    ]
   }
 }
