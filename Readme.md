@@ -241,4 +241,4 @@ MIT License - See [LICENSE](LICENSE) for details.
 ---
 
 **Need Help?**  
-Open an issue or contact [your-email@domain.com](mailto:nishantdev03@gmail.com)
+Open an issue or contact [nishantdev03@gmail.com](mailto:nishantdev03@gmail.com)
